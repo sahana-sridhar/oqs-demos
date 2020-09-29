@@ -10,7 +10,7 @@ ARG OPENSSL_PATH=/opt/openssl
 ARG NGINX_PATH=/opt/nginx
 
 # defines the QSC signature algorithm used for the certificates:
-ARG SIG_ALG="dilithium3"
+ARG SIG_ALG="dilithium2"
 
 # define the nginx version to include
 ARG NGINX_VERSION=1.16.1
@@ -34,7 +34,7 @@ RUN apk add build-base linux-headers \
             libtool automake autoconf cmake \
             make \
             openssl openssl-dev \
-            git wget pcre-dev
+            git wget pcre-dev ca-certificates
 
 # get OQS sources
 WORKDIR /opt
